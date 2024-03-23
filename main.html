@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+			background-image: url('/static/postpartum.jpg');
+			background-position: center;
+			background-size: auto;
+			background-repeat: no-repeat;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            height: 100vh; /* Set height of viewport */
+        }
+		
+        h1 {
+            text-align: center;
+			color: maroon; /* Maroon color for heading */
+            font-weight: bold; /* Bold font weight for heading */
+			margin-top: 3px; /* Adjust margin-top of h1 */
+            margin-bottom: 9px; /* Adjust margin-bottom of h1 */
+        }
+		
+		.container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            margin: auto;
+            width: 80%; /* Adjust width to fit the screen */
+            max-width: 650px; /* Set maximum width */
+            background-color: rgba(255, 255, 255, 0.7); /* White color with 50% opacity */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+            border: 2px solid #ccc; /* Grey border */
+            overflow: hidden; /* Hide overflow */
+			margin-bottom:0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold; /* Make labels bold */
+        }
+
+        select {
+			width: calc(100% - 20px); /* Adjust width of selects */
+			font-weight: bold;
+			background-color: rgba(255, 255, 255, 0.5);
+			padding: 5px; /* Reduce padding */
+			margin-bottom: 29px; /* Reduce margin-bottom */
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: content-box;
+		}
+		
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0px;
+			margin-bottom: 0px;
+        }
+
+        button {
+            background-color: #b59c8a;
+            color: black;
+            padding: 10px 20px;
+            border: 1px solid #333; /* Adding border */
+            border-radius: 4px;
+            cursor: pointer;
+            width: calc(50% - 5px); /* Adjust width to fit both buttons */
+            font-weight: bold; /* Make buttons bold */
+        }
+
+        button:hover {
+            background-color: #d6c9c6;
+        }
+		
+				
+		.result-container {
+			position: absolute; /* Position result container absolutely */
+			top: 45%; /* Align result container to top of form container */
+			right: 150px;  /*Position result container to the right */
+			width: 250px; /* Set width of result container */
+		}
+		
+		.result {
+			text-align: center; /* Align result text to the left */
+			margin-left: 20px; /* Adjust margin as needed */
+			width: 130%; /* Adjust the width as needed */
+			padding: 20px;
+			border: 2px solid #333; /* Add black border */
+			border-radius: 10px; /* Add border radius for rounded corners */
+			background-color: rgba(255, 255, 255, 0.4);
+			font-weight: bold;
+		}
+		
+		h2 {
+			color: maroon; /* Maroon color for heading */
+            font-weight: bold; /* Bold font weight for heading */
+			margin-top: 0px; /* Adjust margin-top of h1 */
+            margin-bottom: 1px; /* Adjust margin-bottom of h1 */
+        }
+    </style>
+</head>
+</body>
+    <h1>Postpartum Depression</h1>
+    <div class="container">
+	<form action="/predict" method="post">
+        <label for="Age">What is the Age of the Patient?</label>
+        <select id="Age" name="Age" required>
+		    <option value="" disabled selected>Choose One</option>
+            <option value="25-30">25-30</option>
+            <option value="30-35">30-35</option>
+            <option value="35-40">35-40</option>
+			<option value="40-45">40-45</option>
+            <option value="45-50">45-50</option>
+        </select>
+        <br>
+        <label for="Feeling_sad_or_Tearful">Is the Patient Feeling Sad or Tearful?</label>
+        <select id="Feeling_sad_or_Tearful" name="Feeling_sad_or_Tearful" required>
+            <option value="" disabled selected>Choose One</option>
+			<option value="Yes">Yes</option>
+            <option value="Sometimes">Sometimes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+		<label for="Irritable_towards_baby_&_partner">Does the Patient get Irritable Towards Baby &/or her Partner?</label>
+        <select id="Irritable_towards_baby_&_partner" name="Irritable_towards_baby_&_partner" required>
+		    <option value="" disabled selected>Choose One</option>
+			<option value="Yes">Yes</option>
+            <option value="Sometimes">Sometimes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+        <label for="Trouble_sleeping_at_night">Does the patient have any Trouble Sleeping at Night?</label>
+        <select id="Trouble_sleeping_at_night" name="Trouble_sleeping_at_night" required>
+            <option value="" disabled selected>Choose One</option>
+			<option value="Yes">Yes</option>
+            <option value="Two or more days a week">Two or More Days a Week</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+		<label for="Problems_concentrating_or_making_decision">Is the patient Facing Problems Concentrating or Making Decisions?</label>
+        <select id="Problems_concentrating_or_making_decision" name="Problems_concentrating_or_making_decision" required>
+		    <option value="" disabled selected>Choose One</option>
+            <option value="Yes">Yes</option>
+            <option value="Often">Often</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+        <label for="Overeating_or_loss_of_appetite">Is the Patient Overeating or feeling the Loss of Appetite?</label>
+        <select id="Overeating_or_loss_of_appetite" name="Overeating_or_loss_of_appetite" required>
+            <option value="" disabled selected>Choose One</option>
+			<option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="Not at all">Not At All</option>
+        </select>
+        <br>
+		<label for="Feeling_anxious">Is the patient Feeling Anxious?</label>
+        <select id="Feeling_anxious" name="Feeling_anxious" required>
+		    <option value="" disabled selected>Choose One</option>
+			<option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+        <label for="Feeling_of_guilt">Is the patient Feeling Guilty?</label>
+        <select id="Feeling_of_guilt" name="Feeling_of_guilt" required>
+            <option value="" disabled selected>Choose One</option>
+			<option value="Yes">Yes</option>
+            <option value="Maybe">Maybe</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+		<label for="Problems_of_bonding_with_baby">Is the patient having Problems Bonding with Baby?</label>
+        <select id="Problems_of_bonding_with_baby" name="Problems_of_bonding_with_baby" required>
+            <option value="" disabled selected>Choose One</option>
+			<option value="Yes">Yes</option>
+            <option value="Sometimes">Sometimes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+        <button type="submit" onclick="predict()">PREDICT</button>
+		<button type="reset" value="Reset">RESET</button>
+	</form>
+	<div class="result-container">
+	{% if prediction %}
+	<div class="result">
+		<h2>Prediction Result:</h2>
+			<p>According to the patient's current response: {{ prediction }}</p>
+	</div>
+	{% endif %}
+	</div>
+</body>
+</html>
