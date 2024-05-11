@@ -9,8 +9,8 @@ This project focuses on the analysis and prediction of postpartum depression (PP
 <h2>Tools Used:</h2>
 <b>Excel:</b> Utilized for data preprocessing tasks and intermediate analysis.<br>
 <b>Python:</b> Used for data processing, analysis, and statistical computations including bootstrapping to perform data augmentation to prepare the data for visualization as well as predictive modeling.<br>
-<b>Tableau:</b> Utilized for creating interactive and insightful visualizations that effectively convey various reasons of depression which results in to suicidial thoughts for the new mothers.
-<b>Flask Library:</b> Utilized to connect machine learning predictions to the web portal through HTML.
+<b>Tableau:</b> Utilized for creating interactive and insightful visualizations that effectively convey various reasons of depression which results in to suicidial thoughts for the new mothers.<br>
+<b>Flask Library:</b> Utilized to connect machine learning predictions to the web portal through HTML.<br>
 <b>HTML:</b> Utilized for creating the Web page to display questionaries and Prediction results.
 
 <h2>Dataset Description:</h2>
